@@ -11,3 +11,9 @@ class CalculatorApp:
         self.entry = tk.Entry(root, width=20, font=('comic sans', 16), bd=10, insertwidth=4, bg="black",fg ="blue",
                               justify='right')
         self.entry.grid(row=0, column=0, columnspan=4)
+if __name__ == "__main__":
+    root = tk.Tk()
+    calculator_app = CalculatorApp(root)
+    root.mainloop()
+
+
