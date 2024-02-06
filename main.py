@@ -23,3 +23,13 @@ class CalculatorApp:
             button = tk.Button(root, text=text, width=5, height=2, font=('comic sans', 16), bd=5, bg="black",fg= "sky blue",
                                command=lambda t=text: self.on_button_click(t))
             button.grid(row=row, column=col, padx=5, pady=5)
+    def on_button_click(self, text):
+        current_text = self.entry.get()
+
+        if text == 'C':
+            self.entry.delete(0, tk.END)
+        elif text == '=':
+            try:
+                result = eval(current_text)
+                self.entry.delete(0, tk.END)
+                self.entry.insert(tk.END, str(result))
